@@ -38,13 +38,13 @@ pipeline {
 
         stage('Initialize the terraform code'){
             steps{
-                sh terraform init
+                sh 'terraform init'
                 }
         }
 
         stage('Apply terraform code'){
             steps{
-               sh terraform apply --auto-approve -var="image_tag=$BUILD_NUMBER"
+               sh 'terraform apply --auto-approve -var="image_tag=$BUILD_NUMBER"'
 
             }
         }
