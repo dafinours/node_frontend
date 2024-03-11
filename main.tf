@@ -97,7 +97,7 @@ resource "aws_ecs_service" "frontend_svc" {
     desired_count = 4
 
     network_configuration {
-      security_groups = [ data.aws_subnets.public_subnets.id ]
+      security_groups = [ data.aws_security_group.frontend_sg.id ]
       subnets = ["subnet-087cc4c415f43a50f", "subnet-0a60c048a47aec5a4"]
     }
 
