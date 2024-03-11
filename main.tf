@@ -104,7 +104,7 @@ resource "aws_ecs_service" "frontend_svc" {
     load_balancer {
       target_group_arn = data.aws_alb_target_group.frontend_tg.arn
       container_name = var.frontend_app_name
-      container_port = 8080
+      container_port = var.frontend_port
     }
   
 }
