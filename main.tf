@@ -32,7 +32,7 @@ data "aws_security_group" "frontend_sg" {
 # ~~~~~~~~~~~~~~~~~~~~~ Getting LoadBalancer ~~~~~~~~~~~~~~~~~~~~~~~
 
 data "aws_alb" "backend_lb" {
-    name = var.backend_app_name 
+    name = "${var.backend_app_name}-lb"
 }
 
 data "aws_alb" "frontend_lb" {
@@ -41,7 +41,7 @@ data "aws_alb" "frontend_lb" {
 
 # ~~~~~~~~~~~~~~~~ Getting target Group for the backend~~~~~~~~~~~~~~
 data "aws_alb_target_group" "frontend_tg" {
-    name = "${var.frontend_app_name}-target-group"
+    name = "${var.frontend_app_name}-targets-group"
 }
 
 # ~~~~~~~~~~~~~~~~ Getting ecr repository~~~~~~~~~~~~~~
