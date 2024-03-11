@@ -98,7 +98,7 @@ resource "aws_ecs_service" "frontend_svc" {
 
     network_configuration {
       security_groups = [ data.aws_subnets.public_subnets.id ]
-      subnets = ["subnet-02edbaa1ce675d546", "subnet-06993722a55f99adf"]
+      subnets = ["subnet-087cc4c415f43a50f", "subnet-0a60c048a47aec5a4"]
     }
 
     load_balancer {
