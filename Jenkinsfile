@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        registry = '643099829845.dkr.ecr.us-east-1.amazonaws.com/node_frontend'
+        registry = '643099829845.dkr.ecr.us-east-2.amazonaws.com/node-frontend-repo'
         registryCredential = 'Jenkins-ecr'
         dockerImage = ''
     }
@@ -28,7 +28,7 @@ pipeline {
         stage('Push Image to ECR') {
             steps {
                 script {
-                    docker.withRegistry("https://"+registry, "ecr:us-east-1:"+registryCredential){
+                    docker.withRegistry("https://"+registry, "ecr:us-east-2:"+registryCredential){
                         dockerImage.push()
                     }
                 }
